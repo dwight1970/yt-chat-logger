@@ -23,18 +23,18 @@ app.listen(httpPort, () => {
 });
 
 liveChat.on("start", (liveId) => {
-  console.log(`Festiwal spierdolenia czas zacząć! liveId: ${liveId} channelId: ${channelId}`);
-  fileStream.write(`Festiwal spierdolenia czas zacząć! liveId: ${liveId} channelId: ${channelId}\n`);
+  console.log(`Log stream has started! liveId: ${liveId} channelId: ${channelId}`);
+  fileStream.write(`Log stream has started! liveId: ${liveId} channelId: ${channelId}\n`);
 });
 
 liveChat.on("end", (reason) => {
-  console.log('Festiwal spierdolenia zakończony.');
-  fileStream.write('Festiwal spierdolenia zakończony.\n\n---\n\n');
+  console.log('Log stream ended.');
+  fileStream.write('Log stream ended.\n\n---\n\n');
   fileStream.end();
 });
 
 liveChat.on("chat", (chatItem) => {
-  fileStream.write(`[${chatItem.timestamp}] ${chatItem.author.name}: ${chatItem.message[0].text}\n`);
+  fileStream.write(`[${chatItem?.timestamp}] ${chatItem?.author?.name || 'anonim'}: ${chatItem?.message[0]?.text}\n`);
 });
 
 const ok = liveChat.start().s4;
