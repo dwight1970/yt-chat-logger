@@ -2,8 +2,8 @@
 
 ## requirements
 
-* node
-* screen
+* node >= 18
+* screen (optional)
 
 ## setup 
 
@@ -11,9 +11,17 @@
 
 ## startup
 
+Start with: 
+
 `npm run start`
 
-or, send it to background using
+Debug with:
+
+`npm run watch`
+
+Or send it to the background with:
 
 `screen -d -m npm run start`
+
+use `screen -r` to reattach
 
