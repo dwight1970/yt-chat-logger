@@ -1,21 +1,29 @@
 {
-  "name": "nr-chat",
+  "name": "yt-chat-logger",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "start": "npx nodemon index.js",
+    "start": "npx nodemon",
+    "watch": "npx nodemon --inspect --inspect-port:9229",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "dwight1970",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2",
+    "express": "4.19.2",
     "youtube-chat": "2.2.0"
   },
   "devDependencies": {
-    "dotenv": "^16.4.5",
-    "nodemon": "3.1.0"
+    "@types/express": "4.17.21",
+    "@types/node": "20.12.12",
+    "@typescript-eslint/eslint-plugin": "7.10.0",
+    "@typescript-eslint/parser": "7.10.0",
+    "dotenv": "16.4.5",
+    "eslint": "8.57.0",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "5.4.5"
   }
 }
